@@ -7,7 +7,8 @@
     "react": "^16.2.0",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
@@ -29,6 +30,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "build-ui": "./node_modules/.bin/parcel build bundler/bundler.html --public-url /ui/dist",
-    "watch-ui": "./node_modules/.bin/parcel watch bundler/bundler.html --public-url /ui/dist"
-  }
+    "watch-ui": "./node_modules/.bin/parcel watch bundler/bundler.html --public-url /ui/dist",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
+  },
+  "snyk": true
 }
