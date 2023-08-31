@@ -13,7 +13,9 @@
     "run-venv-win": "./venv/Scripts/activate.bat && python server/manage.py runserver",
     "browser-sync": "browser-sync start --files=\"/server/**/*.*\" --proxy 127.0.0.1:8000 --port 3000 --no-inject-changes --reload-delay=300 --reload-debounce=300 --no-inject-changes --ws --no-notify",
     "start-mac": "npm-run-all --parallel run-ui run-venv-mac",
-    "start-win": "npm-run-all --parallel run-ui run-venv-win"
+    "start-win": "npm-run-all --parallel run-ui run-venv-win",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +24,8 @@
     "npm-run-all": "^4.1.2"
   },
   "dependencies": {
-    "browser-sync": "^2.18.13"
-  }
+    "browser-sync": "^2.18.13",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
